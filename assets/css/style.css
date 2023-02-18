@@ -1,0 +1,92 @@
+body {
+    padding-top: 5%;
+    background: rgba(0, 0, 0, .85) url('/assets/images/slots-background.jpg');
+    background-blend-mode: darken;
+}
+
+
+#fruit-container {
+    display: flex;
+    border: 2px solid black;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    overflow: hidden;
+}
+
+#row1 {
+    flex: 1;
+    height: 100%;
+    background-color: red;
+}
+
+#row2 {
+    flex: 1;
+    height: 100%;
+    background-color: blue;
+}
+
+#row3 {
+    flex: 1;
+    height: 100%;
+    background-color: red;
+}
+
+#tecnical-container{
+    background-color: rgba(129, 104, 104, 0.45);
+    display: flex;
+    width: 600px;
+    margin: auto;
+    padding: 1.5rem 0 1rem 0;
+}
+
+#technical1 {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.5rem;
+}
+
+#technical2 {
+    margin-top: -10px;
+    width: 33%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#technical3 {
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.5rem;
+}
+
+button {
+    background-color: rgb(80, 30, 30, 0.8);
+    border-radius: 50%;
+    padding: 2rem;
+}
+
+button:hover{
+    background-color: rgba(136, 106, 106, 0.8);
+}
+
+input {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+img {
+    max-width: 100%;
+    border: 0px;
+    display: block;
+    outline: 1px solid rgb(201, 199, 199);
+}
+
+
+
+
+
