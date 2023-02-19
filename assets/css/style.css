@@ -11,28 +11,27 @@ body {
     margin: auto;
     height: 600px;
     width: 600px;
-    overflow: hidden;  
+    position: relative;
+    overflow: hidden;
 }
 
 #row1 {
     flex: 1;
     height: 100%;
     background-color: red;
-    transform: translateY(-7400px);
 }
 
 #row2 {
     flex: 1;
     height: 100%;
     background-color: blue;
-    transform: translateY(-7400px);
+    
 }
 
 #row3 {
     flex: 1;
     height: 100%;
     background-color: red;
-    transform: translateY(-7400px);
 }
 
 #tecnical-container{
@@ -88,26 +87,7 @@ img {
     border: 0px;
     display: block;
     outline: 1px solid rgb(201, 199, 199);
-    animation: roll;
-}
-
-.row1 {
-    animation: roll 2s ease;
-}
-
-.row2 {
-    animation: roll 2.5s ease;
-}
-
-.row3 {
-    animation: roll 3s ease;
-}
-
-
-
-@keyframes roll {
-    0% {transform: translateY(-7400px)}
-    100% {transform: translateY(0px)}
+    
 }
 
 
