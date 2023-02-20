@@ -1,9 +1,26 @@
 let row1 = document.getElementById('row1');
 let row2 = document.getElementById('row2');
 let row3 = document.getElementById('row3');
-const spin = document.getElementById('spin');
-let click = '';
-let r1c1 = '';
+let credit = document.getElementById('credit');
+let bet = document.getElementById('bet');
+let spin = document.getElementById('spin');
+let win = 0;
+
+document.addEventListener("DOMContentLoaded", function(){
+    bet.value='10';
+    giveSomeCredit();
+    spinWheel();
+    
+})
+
+function giveSomeCredit(){
+    let pay = document.getElementById('pay')
+pay.addEventListener('keydown', function(event) {
+if (event.key === 'Enter') {
+        credit.innerHTML = pay.value;
+    }
+})
+}
 
 for (var a=[],i=0;i<100;++i) 
 a[i]=Math.floor(Math.random()*7+1);
@@ -26,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function (){
         }
     })
 
+    
 
 
 
@@ -61,19 +79,18 @@ spin.addEventListener('click', function() {
             img3.src=`assets/images/picture${a[i+Math.floor(Math.random()*7)]}.jpg`;
             row1.appendChild(img);
             row2.appendChild(img2);
-            row3.appendChild(img3);
-           
-             
+            row3.appendChild(img3);     
         }
+        win=0;
         gameWin();
+        
     }, 2000)
-    
+    yourCredit ()
 });
-
 
 }
 
-spinWheel();
+
 
 function  gameWin() {
     let r1c1 = row1.children[0].getAttribute('src');
@@ -85,19 +102,53 @@ function  gameWin() {
     let r3c1 = row3.children[0].getAttribute('src');
     let r3c2 = row3.children[1].getAttribute('src');
     let r3c3 = row3.children[2].getAttribute('src');
-    
-    
-
-    console.log(r3c2 == r2c2 && r2c2== r1c2 && r3c2 == r1c2)
-    console.log(r3c2)
-    console.log(r2c2)
-    console.log(r1c2)
-    if(r3c2 == r2c2 && r2c2== r1c2 && r3c2 == r1c2) {
-        console.log(':)')
-        
-    } else {
-        console.log(':(')
+    if (r3c2 == r2c2 && r2c2== r1c2 && r3c2 == r1c2) {
+        r1c2 = row1.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';   
+        r2c2 = row2.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';
+        r3c2 = row3.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';
+        win += 50; 
+       // var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+       // audio.play()
+    } 
+    if(r1c1 == r2c1 && r2c1== r3c1 && r3c1 == r1c1) {
+        r1c1 = row1.children[0].style.outline = '7px solid rgba(99, 38, 240, 0.85)';   
+        r2c1 = row2.children[0].style.outline = '7px solid rgba(99, 38, 240, 0.85)';
+        r3c1 = row3.children[0].style.outline = '7px solid rgba(99, 38, 240, 0.85)';   
+        win += 50;
+        //var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+        //audio.play()
     }
+    if(r1c3 == r2c3 && r2c3== r3c3 && r3c3 == r1c3) {
+        r1c3 = row1.children[2].style.outline = '7px solid rgba(240, 38, 38, 0.85)';   
+        r2c3 = row2.children[2].style.outline = '7px solid rgba(240, 38, 38, 0.85)';
+        r3c3 = row3.children[2].style.outline = '7px solid rgba(240, 38, 38, 0.85)'; 
+        win += 50; 
+        //var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+        //audio.play()
+    }
+    if(r1c1 == r2c2 && r2c2== r3c3 && r3c3 == r1c1) {
+        r1c1 = row1.children[0].style.outline = '7px solid rgba(255, 36, 182, 0.85)';   
+        r2c2 = row2.children[1].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
+        r3c3 = row3.children[2].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
+        win += 50;
+        //var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+        //audio.play()
+    }
+    if(r1c3 == r2c2 && r2c2== r3c1 && r3c1 == r1c3) {
+        r1c3 = row1.children[2].style.outline = '7px solid rgba(255, 36, 182, 0.85)';   
+        r2c2 = row2.children[1].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
+        r3c1 = row3.children[0].style.outline = '7px solid rgba(255, 36, 182, 0.85)';  
+        win += 50;
+        //var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+        //audio.play()
+    }
+    
+}
+
+
+function yourCredit () {
+    let playAmount = Math.floor(credit.textContent)-bet.value +win;
+    credit.innerHTML=playAmount;
     
 }
 
