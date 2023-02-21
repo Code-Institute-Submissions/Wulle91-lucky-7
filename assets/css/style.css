@@ -81,7 +81,7 @@ body {
 button {
     background-color: rgb(80, 30, 30, 0.8);
     border-radius: 50%;
-    padding: 2rem;
+    
 }
 
 button:hover{
@@ -115,6 +115,17 @@ img {
     border-radius: 10px;
     color: white;
     text-align: center;
+}
+
+.that-span{
+    position : absolute;
+    bottom : -10px;
+    background-color : rgba(0, 0, 0, 0.45);
+    text-align : center;
+    bottom : 0;
+    padding : 3px;
+    width : 100%;
+    color : white;
 }
 
 

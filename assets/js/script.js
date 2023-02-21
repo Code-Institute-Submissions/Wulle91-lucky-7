@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
         makePictures(a[i], row1)
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i+15], row2)
+        makePictures(a[i + 15], row2)
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i+30], row3)
-    }    
+        makePictures(a[i + 30], row3)
+    }
 })
 
-function makePictures(imagename, rownum){
+function makePictures(imagename, rownum) {
     let img = document.createElement('img');
     img.src = `assets/images/picture${imagename}.jpg`;
     rownum.appendChild(img);
@@ -58,6 +58,15 @@ function rolling0(rownr, sec) {
     rownr.style.transition = `all ${sec}s linear`;
 }
 
+function deleteRows(first, second, third) {
+    let chil = document.getElementById(first).children;
+    let chil2 = document.getElementById(second).children;
+    let chil3 = document.getElementById(third).children;
+    chil[0].remove();
+    chil2[0].remove();
+    chil3[0].remove();
+}
+
 function spinWheel() {
     spin.addEventListener('click', function () {
         spin.disabled = true;
@@ -66,12 +75,7 @@ function spinWheel() {
         rolling(row3, 1.6);
         setTimeout(function () {
             for (let i = 0; i < 40; i++) {
-                let chil = document.getElementById('row1').children;
-                let chil2 = document.getElementById('row2').children;
-                let chil3 = document.getElementById('row3').children;
-                chil[0].remove();
-                chil2[0].remove();
-                chil3[0].remove();
+                deleteRows('row1', 'row2', 'row3')
             }
             rolling0(row1, 0);
             rolling0(row2, 0);
@@ -89,9 +93,15 @@ function spinWheel() {
             }
             win = 0;
             gameWin();
-            yourLastWin ()
+            yourLastWin();
         }, 1601)
     });
+}
+
+function winningPairs(cil1, cil2, cil3, color) {
+    row1.children[cil1].style.outline = `7px solid ${color}`;
+    row2.children[cil2].style.outline = `7px solid ${color}`;
+    row3.children[cil3].style.outline = `7px solid ${color}`;
 }
 
 function gameWin() {
@@ -106,103 +116,63 @@ function gameWin() {
     let r3c2 = row3.children[1].getAttribute('src');
     let r3c3 = row3.children[0].getAttribute('src');
     if (r3c2 == r2c2 && r2c2 == r1c2 && r3c2 == r1c2) {
-        r1c2 = row1.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';
-        r2c2 = row2.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';
-        r3c2 = row3.children[1].style.outline = '7px solid rgba(62, 243, 17, 0.85)';       
-        wiingCombis(1)
+        winningPairs(1, 1, 1, 'rgba(62, 243, 17, 0.85)');
+        wiingCombis(1);
     }
     if (r1c1 == r2c1 && r2c1 == r3c1 && r3c1 == r1c1) {
-        r1c1 = row1.children[2].style.outline = '7px solid rgba(99, 38, 240, 0.85)';
-        r2c1 = row2.children[2].style.outline = '7px solid rgba(99, 38, 240, 0.85)';
-        r3c1 = row3.children[2].style.outline = '7px solid rgba(99, 38, 240, 0.85)';
-        wiingCombis(2)       
+        winningPairs(2, 2, 2, 'rgba(99, 38, 240, 0.85)');
+        wiingCombis(2);
     };
     if (r1c3 == r2c3 && r2c3 == r3c3 && r3c3 == r1c3) {
-        r1c3 = row1.children[0].style.outline = '7px solid rgba(240, 38, 38, 0.85)';
-        r2c3 = row2.children[0].style.outline = '7px solid rgba(240, 38, 38, 0.85)';
-        r3c3 = row3.children[0].style.outline = '7px solid rgba(240, 38, 38, 0.85)';        
-        wiingCombis(0)
+        winningPairs(0, 0, 0, 'rgba(240, 38, 38, 0.85)');
+        wiingCombis(0);
     };
-    gameWin2();
-}
-function wiingCombis(num){
-     winValue(num);
-        var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
-        audio.play();
-}
-
-function gameWin2() {
-    let r1c1 = row1.children[2].getAttribute('src');
-    let r1c2 = row1.children[1].getAttribute('src');
-    let r1c3 = row1.children[0].getAttribute('src');
-    let r2c1 = row2.children[2].getAttribute('src');
-    let r2c2 = row2.children[1].getAttribute('src');
-    let r2c3 = row2.children[0].getAttribute('src');
-    let r3c1 = row3.children[2].getAttribute('src');
-    let r3c2 = row3.children[1].getAttribute('src');
-    let r3c3 = row3.children[0].getAttribute('src');
     if (r1c1 == r2c2 && r2c2 == r3c3 && r3c3 == r1c1) {
-        r1c1 = row1.children[2].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
-        r2c2 = row2.children[1].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
-        r3c3 = row3.children[0].style.outline = '7px solid rgba(255, 36, 182, 0.85)';       
-        wiingCombis(2)
-    };  
-    gameWin3();
-}
-
-function gameWin3() {
-    let r1c1 = row1.children[2].getAttribute('src');
-    let r1c2 = row1.children[1].getAttribute('src');
-    let r1c3 = row1.children[0].getAttribute('src');
-    let r2c1 = row2.children[2].getAttribute('src');
-    let r2c2 = row2.children[1].getAttribute('src');
-    let r2c3 = row2.children[0].getAttribute('src');
-    let r3c1 = row3.children[2].getAttribute('src');
-    let r3c2 = row3.children[1].getAttribute('src');
-    let r3c3 = row3.children[0].getAttribute('src');
-    if (r1c3 == r2c2 && r2c2 == r3c1 && r3c1 == r1c3) {
-        r1c3 = row1.children[0].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
-        r2c2 = row2.children[1].style.outline = '7px solid rgba(255, 36, 182, 0.85)';
-        r3c1 = row3.children[2].style.outline = '7px solid rgba(255, 36, 182, 0.85)';       
-        wiingCombis(0)
+        winningPairs(2, 1, 0, 'rgba(255, 36, 182, 0.85)');
+        wiingCombis(2);
     };
-    yourCredit()
+    if (r1c3 == r2c2 && r2c2 == r3c1 && r3c1 == r1c3) {
+        winningPairs(0, 1, 2, 'rgba(255, 36, 182, 0.85)');
+        wiingCombis(2);
+    };
+    yourCredit();
 }
 
-
-
+function wiingCombis(num) {
+    winValue(num);
+    var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+    audio.play();
+}
 
 function yourCredit() {
     bigWin();
     let playAmount = Math.floor(credit.textContent) - bet.value + win;
     credit.innerHTML = playAmount;
     if (credit.textContent < bet.value && win == 0) {
-        bet.value=bet.value-(bet.value-Math.floor(credit.textContent));
-        }
-        if(credit.textContent == 0){
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('popup-title').innerHTML = 'Ups...';
-            document.getElementById('text').innerHTML = 'Add some credit to keep playing';
-            giveSomeCredit();
+        bet.value = bet.value - (bet.value - Math.floor(credit.textContent));
+    }
+    if (credit.textContent == 0) {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup-title').innerHTML = 'Ups...';
+        document.getElementById('text').innerHTML = 'Add some credit to keep playing';
+        giveSomeCredit();
+    }
+}
+
+function yourLastWin() {
+    if (win > 0) {
+        let fruitCont = document.getElementById('fruit-container');
+        let lastWin = document.createElement('span');
+        lastWin.textContent = `Last win: ${win}$`;
+        fruitCont.appendChild(lastWin);
+        lastWin.setAttribute('class', 'that-span');
+        let thatSpan = document.getElementsByClassName('that-span');
+        if (thatSpan.length > 1) {
+            for (let i = 0; i < thatSpan.length - 1; i++) {
+                thatSpan[i].style.display = 'none';
+            }
         }
     }
-    
-
-function yourLastWin () {
-    if (win>0){
-    let fruitCont = document.getElementById('fruit-container');
-    let lastWin = document.createElement('span');
-    lastWin.textContent = `Last win: ${win}$`;
-    fruitCont.appendChild(lastWin);
-    lastWin.style.position = 'absolute';
-    lastWin.style.bottom = '-10px';
-    lastWin.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
-    lastWin.style.textAlign= 'center'
-    lastWin.style.bottom = '0';
-    lastWin.style.padding = '3px';
-    lastWin.style.width = '100%'
-    lastWin.style.color = 'white'
-}
 }
 
 function bigWin() {
@@ -217,7 +187,7 @@ function bigWin() {
         document.body.appendChild(bigWinImg);
         bigWinImg.innerHTML = `<h1>${win}$</h1>`;
         bigWinImg.firstElementChild.style.marginTop = '52%'
-        bigWinImg.addEventListener('click', function(){
+        bigWinImg.addEventListener('click', function () {
             bigWinImg.style.display = 'none'
             spin.disabled = false;
         })
@@ -225,12 +195,11 @@ function bigWin() {
 }
 
 function winValue(num) {
-    if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture7.jpg`){
+    if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture7.jpg`) {
         win += 15 * bet.value;
-    } else if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture5.jpg`){
+    } else if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture5.jpg`) {
         win += 10 * bet.value;
     } else {
         win += 5 * bet.value;
-    }      
+    }
 }
-
