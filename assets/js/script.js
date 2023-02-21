@@ -11,7 +11,7 @@ let win = 0;
  */
 function giveSomeCredit() {
     spin.disabled = true;
-    let pay = document.getElementById('pay')
+    let pay = document.getElementById('pay');
     pay.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             credit.innerHTML = pay.value;
@@ -20,7 +20,7 @@ function giveSomeCredit() {
             spin.disabled = false;
         }
 
-    })
+    });
 }
 
 
@@ -36,19 +36,19 @@ for (var a = [], i = 0; i < 100; ++i)
 document.addEventListener('DOMContentLoaded', function () {
     
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i], row1)
+        makePictures(a[i], row1);
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i + 15], row2)
+        makePictures(a[i + 15], row2);
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i + 30], row3)
+        makePictures(a[i + 30], row3);
     }
     bet.value = '10';
     giveSomeCredit();
     spinWheel();
-    
-})
+    picalt();
+});
 /**
  * crates ne images for next spin
  */
@@ -61,14 +61,14 @@ function makePictures(imagename, rownum) {
  * function to roll images
 */
 function rolling(rownr, sec) {
-    rownr.style.transform = `translateY(8000px)`
+    rownr.style.transform = `translateY(8000px)`;
     rownr.style.transition = `all ${sec}s ease`;
 }
 /**
  * translate back after overflown pictures are deleted and sets last picture as first
  */
 function rolling0(rownr, sec) {
-    rownr.style.transform = `translateY(0px)`
+    rownr.style.transform = `translateY(0px)`;
     rownr.style.transition = `all ${sec}s linear`;
 }
 /**
@@ -124,6 +124,16 @@ function winningPairs(cil1, cil2, cil3, color) {
     row3.children[cil3].style.outline = `7px solid ${color}`;
 }
 /**
+ * function to add alternatives to pictures
+ */
+function picalt(){
+    for (let i=0;i<row1.children.length;i++){
+    row1.children[i].setAttribute('alt', 'fruit-pic');
+    row2.children[i].setAttribute('alt', 'fruit-pic');
+    row3.children[i].setAttribute('alt', 'fruit-pic');
+}
+}
+/**
  * identefies images in main container and compares if their the same
  */
 function gameWin() {
@@ -144,19 +154,19 @@ function gameWin() {
     if (r1c1 == r2c1 && r2c1 == r3c1 && r3c1 == r1c1) {
         winningPairs(2, 2, 2, 'rgba(99, 38, 240, 0.85)');
         wiingCombis(2);
-    };
+    }
     if (r1c3 == r2c3 && r2c3 == r3c3 && r3c3 == r1c3) {
         winningPairs(0, 0, 0, 'rgba(240, 38, 38, 0.85)');
         wiingCombis(0);
-    };
+    }
     if (r1c1 == r2c2 && r2c2 == r3c3 && r3c3 == r1c1) {
         winningPairs(2, 1, 0, 'rgba(255, 36, 182, 0.85)');
         wiingCombis(2);
-    };
+    }
     if (r1c3 == r2c2 && r2c2 == r3c1 && r3c1 == r1c3) {
         winningPairs(0, 1, 2, 'rgba(255, 36, 182, 0.85)');
         wiingCombis(2);
-    };
+    }
     yourCredit();
 }
 /**
@@ -164,7 +174,7 @@ function gameWin() {
  */
 function wiingCombis(num) {
     winValue(num);
-    var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
+    var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav');
     audio.play();
 }
 /**
@@ -210,19 +220,19 @@ function bigWin() {
     if (win > 20 * bet.value) {
         let bigWinImg = document.createElement('div');
         spin.disabled = true;
-        bigWinImg.classList.add('popup')
-        bigWinImg.style.background = 'url("/assets/images/big-win-jackpot.png")'
-        bigWinImg.style.backgroundSize = '100% 100%'
+        bigWinImg.classList.add('popup');
+        bigWinImg.style.background = 'url("/assets/images/big-win-jackpot.png")';
+        bigWinImg.style.backgroundSize = '100% 100%';
         bigWinImg.style.height = '349px';
         bigWinImg.style.width = '500px';
         document.body.appendChild(bigWinImg);
         bigWinImg.innerHTML = `<h1>${win}$</h1>`;
         bigWinImg.style.fontFamily = 'Rye';
-        bigWinImg.firstElementChild.style.marginTop = '52%'
+        bigWinImg.firstElementChild.style.marginTop = '52%';
         bigWinImg.addEventListener('click', function () {
-            bigWinImg.style.display = 'none'
+            bigWinImg.style.display = 'none';
             spin.disabled = false;
-        })
+        });
     }
 }
 /**
@@ -241,13 +251,14 @@ function winValue(num) {
  * ok button for touch screens
  */
 function okButton() {
+    let pay = document.getElementById('pay');
     let ok = document.getElementById('ok');
     ok.addEventListener('click', function() {
         credit.innerHTML = pay.value;
             document.getElementById('popup').style.display = 'none';
             bet.value = '10';
             spin.disabled = false;
-    })
+    });
 }
 
-okButton()
+okButton();

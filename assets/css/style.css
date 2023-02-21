@@ -83,10 +83,13 @@ body{
     display: inline-block;
     flex: 1;
     text-align: center;
-    padding-top: 10px;
     font-size: 1.5rem;
     color: aliceblue;
     
+}
+
+#technical1 p{
+    display: inline-block;
 }
 
 #technical2 {
@@ -101,7 +104,7 @@ body{
 #technical3 {
     flex: 1;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     color: aliceblue;
     font-size: 1.5rem;
 }
@@ -124,9 +127,7 @@ input {
 
 img {
     max-width: 100%;
-    border: 0px;
     display: block;
-    border: -1px solid gray;
     outline-offset: -7px;
 }
 
