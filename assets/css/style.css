@@ -17,6 +17,7 @@ body {
     width: 600px;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 #row1 {
@@ -47,6 +48,7 @@ body {
     margin: auto;
     padding: 1.5rem 0 1rem 0;
     color: aliceblue;
+    border-radius: 10px;
 }
 
 #technical1 {
@@ -56,6 +58,7 @@ body {
     padding-top: 10px;
     font-size: 1.5rem;
     color: aliceblue;
+    
 }
 
 #technical2 {
@@ -113,6 +116,7 @@ img {
     color: white;
     text-align: center;
 }
+
 
 
 
