@@ -6,13 +6,9 @@ let bet = document.getElementById('bet');
 let spin = document.getElementById('spin');
 let win = 0;
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    bet.value = '10';
-    giveSomeCredit();
-    spinWheel();
-})
-
+/**
+ * popup where you have to add credit
+ */
 function giveSomeCredit() {
     spin.disabled = true;
     let pay = document.getElementById('pay')
@@ -27,10 +23,18 @@ function giveSomeCredit() {
     })
 }
 
+
+
 for (var a = [], i = 0; i < 100; ++i)
     a[i] = Math.floor(Math.random() * 7 + 1);
 
+
+/**
+ * Code that loads images on page load and bcalls initial functions 
+ */
+
 document.addEventListener('DOMContentLoaded', function () {
+    
     for (let i = 0; i < 43; i++) {
         makePictures(a[i], row1)
     }
@@ -40,24 +44,36 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < 43; i++) {
         makePictures(a[i + 30], row3)
     }
+    bet.value = '10';
+    giveSomeCredit();
+    spinWheel();
+    
 })
-
+/**
+ * crates ne images for next spin
+ */
 function makePictures(imagename, rownum) {
     let img = document.createElement('img');
     img.src = `assets/images/picture${imagename}.jpg`;
     rownum.appendChild(img);
 }
-
+/** 
+ * function to roll images
+*/
 function rolling(rownr, sec) {
     rownr.style.transform = `translateY(8000px)`
     rownr.style.transition = `all ${sec}s ease`;
 }
-
+/**
+ * translate back after overflown pictures are deleted and sets last picture as first
+ */
 function rolling0(rownr, sec) {
     rownr.style.transform = `translateY(0px)`
     rownr.style.transition = `all ${sec}s linear`;
 }
-
+/**
+ * delete overflown images
+ */
 function deleteRows(first, second, third) {
     let chil = document.getElementById(first).children;
     let chil2 = document.getElementById(second).children;
@@ -66,7 +82,9 @@ function deleteRows(first, second, third) {
     chil2[0].remove();
     chil3[0].remove();
 }
-
+/**
+ * function ro roll, calls 3 previous functions, and creates new images for next spin
+ */
 function spinWheel() {
     spin.addEventListener('click', function () {
         spin.disabled = true;
@@ -97,13 +115,17 @@ function spinWheel() {
         }, 1601)
     });
 }
-
+/**
+ * mark winning lines
+ */
 function winningPairs(cil1, cil2, cil3, color) {
     row1.children[cil1].style.outline = `7px solid ${color}`;
     row2.children[cil2].style.outline = `7px solid ${color}`;
     row3.children[cil3].style.outline = `7px solid ${color}`;
 }
-
+/**
+ * identefies images in main container and compares if their the same
+ */
 function gameWin() {
     spin.disabled = false;
     let r1c1 = row1.children[2].getAttribute('src');
@@ -137,13 +159,17 @@ function gameWin() {
     };
     yourCredit();
 }
-
+/**
+ * sound for winning lines and pay-out
+ */
 function wiingCombis(num) {
     winValue(num);
     var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav')
     audio.play();
 }
-
+/**
+ * reduces credit, allerts if you have no credit and adjusts bett if its less than credit
+ */
 function yourCredit() {
     bigWin();
     let playAmount = Math.floor(credit.textContent) - bet.value + win;
@@ -158,12 +184,15 @@ function yourCredit() {
         giveSomeCredit();
     }
 }
-
+/** 
+ * small span over spin button showing our winnings
+*/
 function yourLastWin() {
     if (win > 0) {
         let fruitCont = document.getElementById('fruit-container');
         let lastWin = document.createElement('span');
         lastWin.textContent = `Last win: ${win}$`;
+        lastWin.style.fontFamily='Rye';
         fruitCont.appendChild(lastWin);
         lastWin.setAttribute('class', 'that-span');
         let thatSpan = document.getElementsByClassName('that-span');
@@ -174,7 +203,9 @@ function yourLastWin() {
         }
     }
 }
-
+/**
+ * picture pops out for big win, click on windov closes it
+ */
 function bigWin() {
     if (win > 20 * bet.value) {
         let bigWinImg = document.createElement('div');
@@ -186,6 +217,7 @@ function bigWin() {
         bigWinImg.style.width = '500px';
         document.body.appendChild(bigWinImg);
         bigWinImg.innerHTML = `<h1>${win}$</h1>`;
+        bigWinImg.style.fontFamily = 'Rye';
         bigWinImg.firstElementChild.style.marginTop = '52%'
         bigWinImg.addEventListener('click', function () {
             bigWinImg.style.display = 'none'
@@ -193,7 +225,9 @@ function bigWin() {
         })
     }
 }
-
+/**
+ * 2 simbols are more worth, function for that
+ */
 function winValue(num) {
     if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture7.jpg`) {
         win += 15 * bet.value;
@@ -203,3 +237,17 @@ function winValue(num) {
         win += 5 * bet.value;
     }
 }
+/**
+ * ok button for touch screens
+ */
+function okButton() {
+    let ok = document.getElementById('ok');
+    ok.addEventListener('click', function() {
+        credit.innerHTML = pay.value;
+            document.getElementById('popup').style.display = 'none';
+            bet.value = '10';
+            spin.disabled = false;
+    })
+}
+
+okButton()

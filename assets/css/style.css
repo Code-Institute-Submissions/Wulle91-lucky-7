@@ -1,5 +1,4 @@
 body {
-    padding-top: 5%;
     background: rgba(0, 0, 0, .85) url('/assets/images/slots-background.jpg') no-repeat;
     background-blend-mode: darken;
     position: relative;
@@ -8,6 +7,32 @@ body {
     
 }
 
+#top{
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    background-color: black;
+    border: 3px solid white;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    
+}
+
+#top-imgs{
+    height: 100%;
+    width: auto;
+    display: inline-block;
+}
+
+#welcome{
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-family: Rye, sans-serif;
+}
 
 #fruit-container {
     display: flex;
@@ -128,7 +153,31 @@ img {
     color : white;
 }
 
+#popup-title{
+    font-family: Rye, sans-serif;
+}
 
+#text{
+    margin-top: 7%;
+    font-family: Pacifico;
+    font-size: large;
+}
+
+#pay{
+    margin-top: 5%;
+}
+
+#ok{
+    border-radius: 5px;
+    font-family: Ray;
+    font-size: large;
+    padding: 5px 10px;
+    margin-left: 30px;
+}
+
+.label{
+    font-family: Rye;
+}
 
 
 

@@ -4,39 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rye&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="Online Casino">
+    <meta name="keywords" content="casion, slots, fruits, lucky7, win, online casino">
+    <meta name="autor" content="Casion">
     <link rel="shortcut icon" href="#">
-    <title>Document</title>
+    <title>Lucky 7</title>
 </head>
 <body>
+    <header>
+        <div id="top">
+            <img class="top-imgs" src="assets/images/sevens.jpg" alt="">
+            <h1 id="welcome" >Welcome to lucky 7</h1>
+            <img class="top-imgs" src="assets/images/sevens.jpg" alt="">
+        </div>
+    </header>
     <div id="fruit-container">
-        <div  id="row1">
-            
-        </div>
-        <div class="row" id="row2">
-            
-        </div>
-        <div class="row" id="row3">
-            
-        </div>
+        <div  id="row1"></div>
+        <div class="row" id="row2"></div>
+        <div class="row" id="row3"></div>
     </div>
     <div id="tecnical-container">
         <div id="technical1">
-            <label for="credit">Credit:</label>
+            <label style="font-family: Rye;" for="credit">Credit:</label>
             <span type="number" id="credit">0</span>
         </div>
         <div id="technical2">
             <button id="spin"><i style="font-size: 3rem;" class="fa fa-thin fa-rotate-right"></i></i></button>
         </div>
         <div id="technical3">
-            <label for="bet">Your Bet:</label>
+            <label style="font-family: Rye;" for="bet">Your Bet:</label>
             <input type="number" id="bet" step="10">
         </div>
     </div>
     <div class="popup" id="popup">
         <h1 id="popup-title">Welcome to lucky 7!</h1>
         <p id="text">Please enter amount of credit</p>
-        <input  id="pay" type="number" min="1000" max="5000">
+        <input id="pay" type="number" min="1000" max="5000">
+        <button id="ok">OK</button>
     </div>
     <script src="assets/js/script.js"></script>
 </body>
