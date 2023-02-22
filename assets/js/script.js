@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         makePictures(a[i], row1);
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i + 15], row2);
+        makePictures(a[i + Math.floor(Math.random() * 30)], row2);
     }
     for (let i = 0; i < 43; i++) {
-        makePictures(a[i + 30], row3);
+        makePictures(a[i + Math.floor(Math.random() * 50)], row3);
     }
     bet.value = '10';
     giveSomeCredit();
