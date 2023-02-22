@@ -11,24 +11,24 @@ let win = 0;
 function giveSomeCredit() {
     spin.disabled = true;
     let pay = document.getElementById('pay');
-        pay.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                if(pay.value>100){
+    pay.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            if (pay.value > 100) {
                 credit.innerHTML = pay.value;
                 document.getElementById('popup').style.display = 'none';
                 bet.value = '10';
                 spin.disabled = false;
-            }else{
+            } else {
                 credit.innerHTML = '100';
                 document.getElementById('popup').style.display = 'none';
-                        bet.value = '10';
-                        spin.disabled = false;
+                bet.value = '10';
+                spin.disabled = false;
             }
-            
-            }
-           
-        });
-        
+
+        }
+
+    });
+
 }
 
 
@@ -41,7 +41,7 @@ for (var a = [], i = 0; i < 100; ++i)
  * Code that loads images on page load and bcalls initial functions 
  */
 
-document.addEventListener('DOMContentLoaded', function () { 
+document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < 43; i++) {
         makePictures(a[i], row1);
     }
@@ -66,7 +66,7 @@ function makePictures(imagename, rownum) {
 }
 /** 
  * function to roll images
-*/
+ */
 function rolling(rownr, sec) {
     rownr.style.transform = `translateY(1333.33%)`;
     rownr.style.transition = `all ${sec}s ease`;
@@ -121,7 +121,7 @@ function spinWheel() {
             gameWin();
             yourLastWin();
         }, 1601)
-    });  
+    });
 }
 /**
  * mark winning lines
@@ -134,12 +134,12 @@ function winningPairs(cil1, cil2, cil3, color) {
 /**
  * function to add alternatives to pictures
  */
-function picalt(){
-    for (let i=0;i<row1.children.length;i++){
-    row1.children[i].setAttribute('alt', 'fruit-pic');
-    row2.children[i].setAttribute('alt', 'fruit-pic');
-    row3.children[i].setAttribute('alt', 'fruit-pic');
-}
+function picalt() {
+    for (let i = 0; i < row1.children.length; i++) {
+        row1.children[i].setAttribute('alt', 'fruit-pic');
+        row2.children[i].setAttribute('alt', 'fruit-pic');
+        row3.children[i].setAttribute('alt', 'fruit-pic');
+    }
 }
 /**
  * identefies images in main container and compares if their the same
@@ -195,7 +195,7 @@ function yourCredit() {
     adjustBet()
 }
 
-function adjustBet(){
+function adjustBet() {
     if (credit.textContent < bet.value && win == 0) {
         bet.value = bet.value - (bet.value - Math.floor(credit.textContent));
     }
@@ -208,13 +208,13 @@ function adjustBet(){
 }
 /** 
  * small span over spin button showing our winnings
-*/
+ */
 function yourLastWin() {
     if (win > 0) {
         let fruitCont = document.getElementById('fruit-container');
         let lastWin = document.createElement('span');
         lastWin.textContent = `Last win: ${win}$`;
-        lastWin.style.fontFamily='Rye';
+        lastWin.style.fontFamily = 'Rye';
         fruitCont.appendChild(lastWin);
         lastWin.setAttribute('class', 'that-span');
         let thatSpan = document.getElementsByClassName('that-span');
@@ -265,19 +265,19 @@ function winValue(num) {
 function okButton() {
     let pay = document.getElementById('pay');
     let ok = document.getElementById('ok');
-    ok.addEventListener('click', function() {   
-            if(pay.value>100){
+    ok.addEventListener('click', function () {
+        if (pay.value > 100) {
             credit.innerHTML = pay.value;
             document.getElementById('popup').style.display = 'none';
             bet.value = '10';
             spin.disabled = false;
-        }else{
+        } else {
             credit.innerHTML = '100';
             document.getElementById('popup').style.display = 'none';
             bet.value = '10';
             spin.disabled = false;
         }
-          
+
     });
 }
 
