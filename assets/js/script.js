@@ -174,7 +174,7 @@ function gameWin() {
  */
 function wiingCombis(num) {
     winValue(num);
-    var audio = new Audio('/assets/audio/mixkit-service-bell-double-ding-588.wav');
+    var audio = new Audio('assets/audio/mixkit-service-bell-double-ding-588.wav');
     audio.play();
 }
 /**
@@ -221,7 +221,7 @@ function bigWin() {
         let bigWinImg = document.createElement('div');
         spin.disabled = true;
         bigWinImg.classList.add('popup');
-        bigWinImg.style.background = 'url("/assets/images/big-win-jackpot.png")';
+        bigWinImg.style.background = 'url("assets/images/big-win-jackpot.png")';
         bigWinImg.style.backgroundSize = '100% 100%';
         bigWinImg.style.height = '349px';
         bigWinImg.style.width = '500px';
