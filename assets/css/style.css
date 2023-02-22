@@ -113,6 +113,8 @@ body{
 button {
     background-color: rgb(80, 30, 30, 0.8);
     border-radius: 50%;
+    width: 100px;
+    height: 100px;
     
 }
 
@@ -213,12 +215,15 @@ img {
     }
     #tecnical-container{
         width: 100%;
-        height: 60%;
     }
     .label{
         font-size: 10px;
     }
     .popup{
         width: 80%;
+    }
+    #main-contauner{
+        position: absolute;
+        height: 100%;
     }
 }
