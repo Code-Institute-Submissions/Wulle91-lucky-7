@@ -199,7 +199,7 @@ function adjustBet() {
     if (credit.textContent == 0) {
         document.getElementById('popup').style.display = 'block';
         document.getElementById('popup-title').innerHTML = 'Ups...';
-        document.getElementById('text').innerHTML = 'Add some credit to keep playing';
+        document.getElementById('text').innerHTML = 'Add some credit to keep playing(min. 100)';
         giveSomeCredit();
     }
 }
@@ -232,8 +232,8 @@ function bigWin() {
         bigWinImg.classList.add('popup');
         bigWinImg.style.background = 'url("assets/images/big-win-jackpot.png")';
         bigWinImg.style.backgroundSize = '100% 100%';
-        bigWinImg.style.height = '349px';
-        bigWinImg.style.width = '500px';
+        bigWinImg.style.height = '261px';
+        bigWinImg.style.width = '375px';
         document.body.appendChild(bigWinImg);
         bigWinImg.innerHTML = `<h1>${win}$</h1>`;
         bigWinImg.style.fontFamily = 'Rye';
@@ -242,6 +242,7 @@ function bigWin() {
             bigWinImg.style.display = 'none';
             spin.disabled = false;
         });
+        
     }
 }
 /**

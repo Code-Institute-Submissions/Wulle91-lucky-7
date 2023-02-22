@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rye&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--for search engines-->
     <meta name="description" content="Online Casino">
     <meta name="keywords" content="casion, slots, fruits, lucky7, win, online casino">
     <meta name="autor" content="Casion">
@@ -16,7 +17,8 @@
     <title>Lucky 7</title>
 </head>
 <body>
-    <div id="main-contauner">
+    <main id="main-contauner">
+        <!--name of game-->
         <header>
             <div id="top">
                 <img class="top-imgs" src="assets/images/sevens.jpg" alt="">
@@ -24,35 +26,41 @@
                 <img class="top-imgs" src="assets/images/sevens.jpg" alt="">
             </div>
         </header>
+        <!--scrolling text explaining the game and values-->
         <div id="explane">
             <p>To start the game press the button in the middle under fruit images, your bet will reduce your credit on every spin and your win will be added to your credit. Your winnings will be shown in a small box over spin button.  <img src="assets/images/lemon-icon.jpg" alt="lemon-icon"><img src="assets/images/lemon-icon.jpg" alt="lemon-icon"> <img src="assets/images/lemon-icon.jpg" alt="lemon-icon">or<img src="assets/images/orange-icon.jpg" alt="orange-icon"><img src="assets/images/orange-icon.jpg" alt="orange-icon"><img src="assets/images/orange-icon.jpg" alt="orange-icon">or<img src="assets/images/watermelon-icon.jpg" alt="watermelon-icon"><img src="assets/images/watermelon-icon.jpg" alt="watermelon-icon"><img src="assets/images/watermelon-icon.jpg" alt="watermelon-icon">or<img src="assets/images/grapes-icon.jpg" alt="grapes-icon"><img src="assets/images/grapes-icon.jpg" alt="grapes-icon"><img src="assets/images/grapes-icon.jpg" alt="grapes-icon">or<img src="assets/images/bar-icon.jpg" alt="bar-icon"><img src="assets/images/bar-icon.jpg" alt="bar-icon"><img src="assets/images/bar-icon.jpg" alt="bar-icon">= 5*Bet, <img src="assets/images/clover-icon.jpg" alt="clover-icon"><img src="assets/images/clover-icon.jpg" alt="clover-icon"><img src="assets/images/clover-icon.jpg" alt="clover-icon">=10*Bet and <img src="assets/images/777-icon.jpg" alt="777-icon"><img src="assets/images/777-icon.jpg" alt="777-icon"><img src="assets/images/777-icon.jpg" alt="777-icon"> = 15*Bet. Thank you for playing.</p>
         </div>
+        <!--rolling container with 9 images-->
         <div id="fruit-container">
             <div  id="row1"></div>
             <div class="row" id="row2"></div>
             <div class="row" id="row3"></div>
         </div>
+        <!--under fruti container spin button with bet and credit-->
         <div id="tecnical-container">
             <div id="technical1">
                 <p style="font-family: Rye;" >Credit:</p>
                 <span id="credit">0</span>
             </div>
+            <!--spin button-->
             <div id="technical2">
                 <button id="spin">.<i style="font-size: 3rem;" class="fa fa-thin fa-rotate-right"></i>.</button>
             </div>
+            <!--bet-->
             <div id="technical3">
                 <label style="font-family: Rye;" for="bet">Your Bet:</label>
                 <input type="number" id="bet" step="10">
             </div>
         </div>
+        <!--popup eindow for add credit-->
         <div class="popup" id="popup">
             <h1 id="popup-title">Welcome to lucky 7!</h1>
-            <label for="pay" id="text">Please enter amount of credit</label>
+            <label for="pay" id="text">Please enter amount of credit(Min. 100)</label>
             <br>
             <input id="pay" type="number" min="100">
             <button id="ok">OK</button>
         </div>
-    </div>
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

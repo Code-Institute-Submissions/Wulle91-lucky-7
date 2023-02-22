@@ -6,6 +6,28 @@ A lot of people are gambling and every day there are more people with the same h
 
 ![Responsice Mockup](https://github.com/Wulle91/lucky-7/blob/main/assets/images/amiresponsive.PNG)
 
+## Frameworks I Used
+
+- __GitHub__
+
+  - GitHub is used to store the projects code after being pushed from Git.
+
+- __Balsamiq__
+
+  - Balsamiq was used to create the wireframes during the design process.[Balsamiq wireframe](/workspace/lucky-7/blob/main/assets/images/New Project 1.bmpr)
+
+- __Font Awesome__
+
+  - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+
+- __Google Fonts__
+
+  - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+
+- __Hover:css__
+
+  - Hover.css was used on buttons.
+
 ## Features 
 
 - __Header__
@@ -91,7 +113,7 @@ I confirmed that the form works: requires entries in every field, will only acce
   - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Wulle91/lucky-7/blob/main/assets/images/css-validator.PNG)
 
 - JSHint    
-  - 
+  - I got 56 Wwarnings ""let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)"" [(Jigsaw) validator](https://github.com/Wulle91/lucky-7/blob/main/assets/images/css-validator.PNG)
 
 - Accessibility     
   - I confirm that colors and fonts are easy to read by running it trought lighthouse in devtools. [lighthouse validator](https://github.com/Wulle91/blob/main/lucky-7/assets/images/lighthouse.PNG)
