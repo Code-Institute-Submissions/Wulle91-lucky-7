@@ -3,9 +3,12 @@ body{
     background: url('../images/slots-background.jpg') no-repeat;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 #main-contauner{
+    overflow: hidden;
     background-color: rgba(3, 3, 3, 0.85);
     margin: 0;
     height: 100%;
@@ -22,7 +25,7 @@ body{
     background-color: black;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px;   
+    
 }
 
 #top-imgs{
@@ -37,6 +40,29 @@ body{
     letter-spacing: 5px;
     font-family: Rye, sans-serif;
 }
+
+#explane{
+    border-radius: 5px;
+    position: relative;
+    width: 3600px;
+    font-family: rye;
+    text-align: center;
+    letter-spacing: 2px;
+    animation: roll 40s 3 linear;
+    height: 25px;
+    background-color: white;
+    transform: translateX(-100%);
+    
+}
+
+#explane img {
+    display: inline-block;
+    position: relative;
+    bottom: -4px;
+    margin-right: 5px;
+}
+
+
 
 #fruit-container {
     display: flex;
@@ -225,5 +251,14 @@ img {
     #main-contauner{
         position: absolute;
         height: 100%;
+    }
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(57%);
+    }
+    100%{
+        transform: translateX(-100%);
     }
 }

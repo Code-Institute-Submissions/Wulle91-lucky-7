@@ -1,108 +1,132 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Online casino slot machine
 
-Welcome Wulle91,
+A slot machine's standard layout features a screen displaying three or more reels that "spin" when the game is activated. Some modern slot machines still include a lever as a skeuomorphic design trait to trigger play. However, the mechanics of early machines have been superseded by random number generators, and most are now operated using buttons and touchscreens.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+A lot of people are gambling and every day there are more people with the same hobby. Flight to Las Vegas can be time consuming and cost a lot more than planned, with this app you can practice your hobby from the comfort of your own home. Join million other users trying their luck on our slot machines.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsice Mockup](https://github.com/Wulle91/lucky-7/assets/images/amiresponsive.PNG)
 
-## Gitpod Reminders
+## Features 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Header__
 
-`python3 -m http.server`
+  - In the header we don't have the navigation bar because it's just one simple game and no extern links to other pages or sections.
 
-A blue button should appear to click: _Make Public_,
+  - In the header is the name of our game and welcome greeting with two images of lucky 777 on both sides.
 
-Another blue button should appear to click: _Open Browser_.
+  - I used wild wests type of font to associate users with America and big Vegas signs.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Nav Bar](https://github.com/Wulle91/lucky-7/assets/images/header.PNG)
 
-A blue button should appear to click: _Make Public_,
+- __The landing page image__
 
-Another blue button should appear to click: _Open Browser_.
+  - When the page loads, it instantly asks to add some credit without which we can't play the game, after input filled we can either press enter or OK button to start the game.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - Under header we have small rolling text with explanation how the game works and how much each winning is worth.
+            
+  - All necessary information is over our game container.
 
-To log into the Heroku toolbelt CLI:
+![legend](https://github.com/Wulle91/lucky-7/assets/images/rolling-legend.PNG)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Fruit container__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - In section is our main game content fruits are already randomly ordered and waiting for a spin. Before we can play we have to add some credit. After input field is filled, we have to either press enter or ok button, our input will be credited in our credit field and we can start the game.
+           
+  - On spin button reel are turned and we have to get three of the same symbols to win, either rows or diagonal and combined, depending on the symbol win is calculated and all lines are summed together.
 
-------
+  - After our win is added to our credit, or bet subtracted, we are ready for new spin, in the meentime our spin button was disabled until all winnings or losses are calculated. 
 
-## Release History
+  - All our winnings will be displayed over spin button all the time until we win something again.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Fruits](https://github.com/Wulle91/lucky-7/assets/images/fruit-container.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Technical container__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - Under our main container with fruit reels, we have technical container where are displayed, our credit and our bet, in between is our spin button.
+             
+  - Credit can't be altered, it is calculated automatically on every spin reduced by Bet, which we can alter, and added by winnings. Spin button starts the new game.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Technical Container](https://github.com/Wulle91/lucky-7/assets/images/technical-container.PNG)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __Game rules__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  -  The game is simple, spin the wheel and hope for the best :), you have to get three same symbols to win in any of the rows or diagonally, every spin reduces your credit and the game is over when you hit the 0, or you have to pay/credit your account to play further.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  -  3 x lemons =       Your bet * 5
+     3 x grapes =       Your bet * 5
+     3 x watermelons =  Your bet * 5 
+     3 x oranges =      Your bet * 5 
+     3 x bar simbols =  Your bet * 5
+     3 x clovers =      Your bet * 10
+     3 x 777 simbol =   Your bet * 15
+           
+  -  Ofcourse your wins are combined, if you get more than one matching line their winning are summed up and added to your credit.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  -  If you win more than 20x of your bet than window pops up with a big win image showing you how much you won.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Locations Times](https://github.com/Wulle91/lucky-7/assets/images/big-win.PNG)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+I tested this page in different browsers Chrome, Firefox and Edge.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+I confirmed that this project looks good and functions on all standard screen sizes using the devtools device toolbar.
 
-------
+I confirmed that the  header, game and technical section and footer are all readable and easy to understand.
 
-## FAQ about the uptime script
+I confirmed that the form works: requires entries in every field, will only accept an email in the email field, and the submit button works.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Validator Testing 
 
-**How will this affect me?**
+- HTML
+  - No errors were returned when passing through the official w3c validaor.
+  [W3C validator game](https://github.com/Wulle91/lucky-7/assets/images/html-validator.PNG)
+  
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Wulle91/lucky-7/assets/images/css-validator.PNG)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- JSHint    
+  - 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- Accessibility     
+  - I confirm that colors and fonts are easy to read by running it trought lighthouse in devtools. [lighthouse validator](https://github.com/Wulle91/lucky-7/assets/images/lighthouse.PNG)
 
-**So….?**
+### Fixed Bugs
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- My images, and sound didn't load, I used / on beginning of arc and that caused the error.
+- My game didn't work because I declared more time the same variable, which caused the error. After deleting sufficient declaration code worked fine. 
+ 
 
-**Can I opt out?**
+## Deployment
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository/lucky-7, navigate to the Settings tab 
+  - From there click on Page
+  - Once there the link of our homepage will be shown on top. 
 
-**Anything more?**
+The live link can be found here - https://wulle91.github.io/lucky-7/
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## Credits 
 
-Happy coding!
+### Content 
+
+- The icons on spin button are taken from Frot Awesome       
+- Instructions how do flexboxs works on youtube  [Specific YouTube Tutorial](https://www.youtube.com/watch?v=JJSoEo8JSnc)
+- Instructions how infinite loops works on youtube, various videos, but most helpfull was  [Specific YouTube Tutorial](https://www.youtube.com/watch?v=0YMntQg-WIk&t=899s)
+- I used stackverflow a lot, mostly because I wanted to check how to use various properties or if I had an error to see what was I doing wrong.
+- I applied all I learned from code institute.
+
+### Media
+
+- 777 icons in header                             https://t3.ftcdn.net/jpg/01/20/10/44/360_F_120104437_3AgC0rejTXK3dLvUTYrI6rQOOjjDCH36.jpg       
+- Fruit images                                    https://www.dreamstime.com/
+- Background image                                https://www.grandsierraresort.com/hubfs/casino/Slots-carousels-on-GSR-casino-floor_q085_1920x1080.jpg 
+- Big Win image                                   https://media.istockphoto.com/id/1244723054/vector/big-win-banner-for-online-casino-poker-roulette-slot-machines-card-games.jpg?s=612x612&w=0&k=20&c=1WwQM0G4-iAfT-l2TYdqkXJqwr_nI84CVGhLmYVY0NI=
+
