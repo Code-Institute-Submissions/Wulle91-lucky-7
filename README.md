@@ -16,7 +16,7 @@ A lot of people are gambling and every day there are more people with the same h
 
   - I used wild wests type of font to associate users with America and big Vegas signs.
 
-![Nav Bar](https://github.com/Wulle91/lucky-7/blob/assets/images/header.PNG)
+![Nav Bar](https://github.com/Wulle91/lucky-7/blob/main/assets/images/header.PNG)
 
 - __The landing page image__
 
@@ -26,7 +26,7 @@ A lot of people are gambling and every day there are more people with the same h
             
   - All necessary information is over our game container.
 
-![legend](https://github.com/Wulle91/lucky-7/blob/assets/images/rolling-legend.PNG)
+![legend](https://github.com/Wulle91/lucky-7/blob/main/assets/images/rolling-legend.PNG)
 
 - __Fruit container__
 
@@ -38,7 +38,7 @@ A lot of people are gambling and every day there are more people with the same h
 
   - All our winnings will be displayed over spin button all the time until we win something again.
 
-![Fruits](https://github.com/Wulle91/lucky-7/blob/assets/images/fruit-container.PNG)
+![Fruits](https://github.com/Wulle91/lucky-7/blob/main/assets/images/fruit-container.PNG)
 
 - __Technical container__
 
@@ -46,7 +46,7 @@ A lot of people are gambling and every day there are more people with the same h
              
   - Credit can't be altered, it is calculated automatically on every spin reduced by Bet, which we can alter, and added by winnings. Spin button starts the new game.
 
-![Technical Container](https://github.com/Wulle91/lucky-7/blob/assets/images/technical-container.PNG)
+![Technical Container](https://github.com/Wulle91/lucky-7/blob/main/assets/images/technical-container.PNG)
 
 - __Game rules__
 
@@ -64,7 +64,7 @@ A lot of people are gambling and every day there are more people with the same h
 
   -  If you win more than 20x of your bet than window pops up with a big win image showing you how much you won.
 
-![Locations Times](https://github.com/Wulle91/lucky-7/blob/assets/images/big-win.PNG)
+![Locations Times](https://github.com/Wulle91/lucky-7/blob/main/assets/images/big-win.PNG)
 
 
 
@@ -84,17 +84,17 @@ I confirmed that the form works: requires entries in every field, will only acce
 
 - HTML
   - No errors were returned when passing through the official w3c validaor.
-  [W3C validator game](https://github.com/Wulle91/lucky-7/blob/assets/images/html-validator.PNG)
+  [W3C validator game](https://github.com/Wulle91/lucky-7/blob/main/assets/images/html-validator.PNG)
   
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Wulle91/lucky-7/blob/assets/images/css-validator.PNG)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/Wulle91/lucky-7/blob/main/assets/images/css-validator.PNG)
 
 - JSHint    
   - 
 
 - Accessibility     
-  - I confirm that colors and fonts are easy to read by running it trought lighthouse in devtools. [lighthouse validator](https://github.com/Wulle91/blob/lucky-7/assets/images/lighthouse.PNG)
+  - I confirm that colors and fonts are easy to read by running it trought lighthouse in devtools. [lighthouse validator](https://github.com/Wulle91/blob/main/lucky-7/assets/images/lighthouse.PNG)
 
 ### Fixed Bugs
 

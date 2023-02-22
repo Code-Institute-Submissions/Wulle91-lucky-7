@@ -24,11 +24,8 @@ function giveSomeCredit() {
                 bet.value = '10';
                 spin.disabled = false;
             }
-
         }
-
     });
-
 }
 
 
@@ -277,7 +274,6 @@ function okButton() {
             bet.value = '10';
             spin.disabled = false;
         }
-
     });
 }
 
