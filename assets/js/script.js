@@ -61,7 +61,7 @@ function makePictures(imagename, rownum) {
  * function to roll images
 */
 function rolling(rownr, sec) {
-    rownr.style.transform = `translateY(8000px)`;
+    rownr.style.transform = `translateY(1333.33%)`;
     rownr.style.transition = `all ${sec}s ease`;
 }
 /**
