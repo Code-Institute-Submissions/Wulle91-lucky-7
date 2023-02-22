@@ -5,22 +5,30 @@ let credit = document.getElementById('credit');
 let bet = document.getElementById('bet');
 let spin = document.getElementById('spin');
 let win = 0;
-
 /**
  * popup where you have to add credit
  */
 function giveSomeCredit() {
     spin.disabled = true;
     let pay = document.getElementById('pay');
-    pay.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            credit.innerHTML = pay.value;
-            document.getElementById('popup').style.display = 'none';
-            bet.value = '10';
-            spin.disabled = false;
-        }
-
-    });
+        pay.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                if(pay.value>100){
+                credit.innerHTML = pay.value;
+                document.getElementById('popup').style.display = 'none';
+                bet.value = '10';
+                spin.disabled = false;
+            }else{
+                credit.innerHTML = '100';
+                document.getElementById('popup').style.display = 'none';
+                        bet.value = '10';
+                        spin.disabled = false;
+            }
+            
+            }
+           
+        });
+        
 }
 
 
@@ -33,8 +41,7 @@ for (var a = [], i = 0; i < 100; ++i)
  * Code that loads images on page load and bcalls initial functions 
  */
 
-document.addEventListener('DOMContentLoaded', function () {
-    
+document.addEventListener('DOMContentLoaded', function () { 
     for (let i = 0; i < 43; i++) {
         makePictures(a[i], row1);
     }
@@ -87,6 +94,7 @@ function deleteRows(first, second, third) {
  */
 function spinWheel() {
     spin.addEventListener('click', function () {
+        adjustBet();
         spin.disabled = true;
         rolling(row1, 1);
         rolling(row2, 1.3);
@@ -113,7 +121,7 @@ function spinWheel() {
             gameWin();
             yourLastWin();
         }, 1601)
-    });
+    });  
 }
 /**
  * mark winning lines
@@ -184,6 +192,10 @@ function yourCredit() {
     bigWin();
     let playAmount = Math.floor(credit.textContent) - bet.value + win;
     credit.innerHTML = playAmount;
+    adjustBet()
+}
+
+function adjustBet(){
     if (credit.textContent < bet.value && win == 0) {
         bet.value = bet.value - (bet.value - Math.floor(credit.textContent));
     }
@@ -253,11 +265,19 @@ function winValue(num) {
 function okButton() {
     let pay = document.getElementById('pay');
     let ok = document.getElementById('ok');
-    ok.addEventListener('click', function() {
-        credit.innerHTML = pay.value;
+    ok.addEventListener('click', function() {   
+            if(pay.value>100){
+            credit.innerHTML = pay.value;
             document.getElementById('popup').style.display = 'none';
             bet.value = '10';
             spin.disabled = false;
+        }else{
+            credit.innerHTML = '100';
+            document.getElementById('popup').style.display = 'none';
+            bet.value = '10';
+            spin.disabled = false;
+        }
+          
     });
 }
 
