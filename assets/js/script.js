@@ -249,9 +249,9 @@ function bigWin() {
  * 2 simbols are more worth, function for that
  */
 function winValue(num) {
-    if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture7.jpg`) {
+    if (row1.children[num].src === `https://wulle91.github.io/lucky-7/assets/images/picture7.jpg`) {
         win += 15 * bet.value;
-    } else if (row1.children[num].src === `https://8000-wulle91-lucky7-3carukec9zo.ws-eu87.gitpod.io/assets/images/picture5.jpg`) {
+    } else if (row1.children[num].src === `https://wulle91.github.io/lucky-7/assets/images/picture5.jpg `) {
         win += 10 * bet.value;
     } else {
         win += 5 * bet.value;
